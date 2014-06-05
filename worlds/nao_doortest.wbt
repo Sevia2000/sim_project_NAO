@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.00679918 -0.813684 -0.581267 3.14214
-  position -2.28924 14.3665 -2.89294
+  orientation -0.44616 0.8735 0.194777 0.864594
+  position 9.08327 4.97454 5.29222
 }
 Background {
   skyColor [
@@ -37,6 +37,43 @@ PointLight {
   intensity 0
   location 0 1.6 0
 }
+DEF ROBOT_DOOR Robot {
+  translation 2.86 1.03 0.32
+  children [
+    DEF STATIC_BODY Shape {
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      endPoint Solid {
+        translation 0.45 0 0
+        children [
+          Shape {
+            geometry Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+SingleDoorCommon {
+  translation 3.28 0 -0.18
+}
+Robot {
+  translation 1.41716 1.03 0.307061
+  children [
+    HingeJoint {
+    }
+    DEF DOOR Shape {
+      geometry Box {
+        size 0.9 2.05 0.3
+      }
+    }
+  ]
+}
 Floor {
   size 25 25
   tileSize 0.8 0.8
@@ -45,6 +82,7 @@ Floor {
   ]
 }
 DEF ORIGIN WallGap {
+  translation 1.72142 7.86698e-16 -0.858051
 }
 DEF NAO_1 Nao {
   translation 3.23 0.334007 1.46

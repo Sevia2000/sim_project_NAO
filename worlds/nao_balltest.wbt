@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.00679918 -0.813684 -0.581267 3.14214
-  position -2.28924 14.3665 -2.89294
+  orientation 0.816227 -0.567339 -0.109085 5.97812
+  position 4.01744 1.93285 5.96614
 }
 Background {
   skyColor [
@@ -45,10 +45,27 @@ Floor {
   ]
 }
 DEF ORIGIN WallGap {
+  translation 0.169353 -5.23366e-15 0.607109
 }
 DEF NAO_1 Nao {
   translation 3.23 0.334007 1.46
   rotation 0.577351 0.577351 0.577349 4.18879
 }
 SphericalSkyDome {
+}
+Ball {
+  translation 2.99141 0.1325 2.18919
+  rotation 0 1 0 6.02139
+  color 1 0 0
+  radius 0.1
+}
+Ball {
+  translation 3.60626 0.1325 2.15013
+  color 1 0 0
+  radius 0.1
+}
+Ball {
+  translation 3.31284 0.1325 2.5197
+  color 1 0 0
+  radius 0.1
 }
