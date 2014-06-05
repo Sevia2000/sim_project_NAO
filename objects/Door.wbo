@@ -1,0 +1,41 @@
+#VRML_OBJ V7.4.3 utf8
+DEF ROBOT_DOOR Robot {
+  translation 2.86 1.03 0.32
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        minStop -1.5708
+        maxStop 1.5708
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.45 0 0
+        children [
+          Shape {
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 0.5
+        }
+      }
+    }
+  ]
+  boundingObject USE STATIC_BODY
+}

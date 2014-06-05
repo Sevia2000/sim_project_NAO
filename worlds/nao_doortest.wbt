@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.44616 0.8735 0.194777 0.864594
-  position 9.08327 4.97454 5.29222
+  orientation 0.688191 -0.682271 -0.246778 5.36374
+  position 7.26867 6.24464 5.76783
 }
 Background {
   skyColor [
@@ -41,26 +41,41 @@ DEF ROBOT_DOOR Robot {
   translation 2.86 1.03 0.32
   children [
     DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
       geometry Box {
         size 0.05 2.05 0.3
       }
     }
     DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        minStop -1.5708
+        maxStop 1.5708
+      }
+      device PositionSensor {
+      }
       endPoint Solid {
         translation 0.45 0 0
         children [
           Shape {
-            geometry Box {
+            geometry DEF DOOR_SHAPE Box {
               size 0.8 2 0.05
             }
           }
         ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 0.5
+        }
       }
     }
   ]
-}
-SingleDoorCommon {
-  translation 3.28 0 -0.18
+  boundingObject USE STATIC_BODY
 }
 Robot {
   translation 1.41716 1.03 0.307061
@@ -86,7 +101,7 @@ DEF ORIGIN WallGap {
 }
 DEF NAO_1 Nao {
   translation 3.23 0.334007 1.46
-  rotation 0.577351 0.577351 0.577349 4.18879
+  rotation 0.577351 -0.577351 -0.57735 4.18879
 }
 SphericalSkyDome {
 }
