@@ -1,6 +1,6 @@
 #VRML_OBJ V7.4.3 utf8
 DEF ROBOT_DOOR Robot {
-  translation 2.86 1.03 0.32
+  translation 4.24 1.03 0
   children [
     DEF STATIC_BODY Shape {
       appearance Appearance {
@@ -29,7 +29,7 @@ DEF ROBOT_DOOR Robot {
             appearance Appearance {
               texture ImageTexture {
                 url [
-                  "C:/Users/Nathaniel/sim_project_NAO/trunk/textures/single_door_common.png"
+                  "textures/single_door_common.png"
                 ]
               }
             }
