@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.65697 -0.702989 -0.272392 5.26081
-  position 6.16307 4.5548 2.42251
+  orientation 0.877621 -0.426435 -0.218941 5.27907
+  position 12.2739 22.5792 13.9061
 }
 Background {
   skyColor [
@@ -38,7 +38,7 @@ PointLight {
   location 0 1.6 0
 }
 DEF ROBOT_DOOR Robot {
-  translation 2.86 1.03 0.32
+  translation 4.24 1.03 0
   children [
     DEF STATIC_BODY Shape {
       appearance Appearance {
@@ -94,7 +94,57 @@ Floor {
   ]
 }
 DEF ORIGIN WallGap {
-  translation 1.72142 7.86698e-16 -0.858051
+}
+WallGap {
+  translation 0 0 -9.3
+}
+Wall {
+  translation 1.65 0 0
+}
+Wall {
+  translation 1.65 0 -9.3
+}
+Wall {
+  translation 4.65 0 -9.3
+}
+Wall {
+  translation 0 0 -1.65
+  rotation 0 1 0 1.5708
+}
+Wall {
+  translation 9.3 0 -1.65
+  rotation 0 1 0 1.5708
+}
+Wall {
+  translation 9.3 0 -4.65
+  rotation 0 1 0 1.5708
+}
+Wall {
+  translation 9.3 0 -7.65
+  rotation 0 1 0 1.5708
+}
+Wall {
+  translation 0 0 -4.65
+  rotation 0 1 0 1.5708
+}
+Wall {
+  translation 0 0 -7.65
+  rotation 0 1 0 1.5708
+}
+WallWithSingleDoorFrame {
+  translation 4.65 0 0
+}
+Wall {
+  translation 7.65 0 0
+}
+Wall {
+  translation 7.65 0 -9.3
+}
+WallGap {
+  translation 9.3 0 0
+}
+WallGap {
+  translation 9.3 0 -9.3
 }
 DEF NAO_1 Nao {
   translation 3.23 0.334006 0.66
