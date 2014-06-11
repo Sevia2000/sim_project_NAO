@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.468111 -0.870831 -0.150082 5.6636
-  position 8.79293 2.48493 7.98121
+  orientation -0.498906 0.829901 0.249713 1.03795
+  position 8.64815 3.70023 5.94207
 }
 Background {
   skyColor [
@@ -92,10 +92,10 @@ Floor {
     "textures/checkered_marble.png"
   ]
 }
-Solid {
-  translation 4.66 0.55 1.45
+DEF QR_SOLID Solid {
+  translation 4.66 0.51 1.45
   children [
-    Shape {
+    DEF QR Shape {
       appearance Appearance {
         material Material {
           ambientIntensity 1
@@ -106,15 +106,16 @@ Solid {
         }
         texture ImageTexture {
           url [
-            "textures/QRCode.png"
+            "textures/ASU_brickyard_address.png"
           ]
         }
       }
       geometry Box {
-        size 1 1 0.1
+        size 1 1 0.01
       }
     }
   ]
+  boundingObject USE QR
 }
 DEF ORIGIN WallGap {
 }
@@ -170,8 +171,10 @@ WallGap {
   translation 9.3 0 -9.3
 }
 DEF NAO_1 Nao {
-  translation 4.66 0.334008 3.28
+  translation 4.66 0.334009 3.85
   rotation 0.577351 -0.577351 -0.57735 4.18879
+  cameraWidth 320
+  cameraHeight 240
 }
 SphericalSkyDome {
 }

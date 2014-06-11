@@ -56,7 +56,7 @@ DEF ROBOT_DOOR Robot {
         anchor 0.05 0 0
         minStop -1.5708
         maxStop 1.5708
-        staticFriction 1.4
+        staticFriction 1
       }
       device PositionSensor {
       }
@@ -67,7 +67,7 @@ DEF ROBOT_DOOR Robot {
             appearance Appearance {
               texture ImageTexture {
                 url [
-                  "C:/Users/Nathaniel/sim_project_NAO/trunk/textures/single_door_common.png"
+                  "textures/single_door_common.png"
                 ]
               }
             }
