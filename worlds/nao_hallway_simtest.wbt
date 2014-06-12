@@ -51,7 +51,7 @@ DEF QR Shape {
   }
 }
 DEF ROBOT_DOOR Robot {
-  translation 4.09176 1.03 1.55064
+  translation 5.28176 1.03 1.55064
   children [
     DEF STATIC_BODY Shape {
       appearance Appearance {
