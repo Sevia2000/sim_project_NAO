@@ -78,6 +78,58 @@ DEF ROOM4_EWALL Wall {
   translation 9.15 0 -10.64
   rotation 0 1 0 1.5708
 }
+DEF ROOM5_SWALL Wall {
+  translation 13.65 0 -3
+}
+DEF ROOM5_NWALL Wall {
+  translation 13.65 0 -6.15
+}
+DEF ROOM5_WWALL Wall {
+  translation 12.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM5_ROOM6_WALL Wall {
+  translation 15.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM6_SWALL Wall {
+  translation 16.65 0 -3
+}
+DEF ROOM6_NWALL Wall {
+  translation 16.65 0 -6.15
+}
+DEF ROOM6_EWALL Wall {
+  translation 18.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF MIDWALL1 Wall {
+  translation 15.15 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM7_SWALL Wall {
+  translation 13.65 0 -9.15
+}
+DEF ROOM7_NWALL Wall {
+  translation 13.65 0 -12.15
+}
+DEF ROOM7_WWALL Wall {
+  translation 12.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM7_ROOM8_WALL Wall {
+  translation 15.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM8_SWALL Wall {
+  translation 16.65 0 -9.15
+}
+DEF ROOM8_NWALL Wall {
+  translation 16.65 0 -12.15
+}
+DEF ROOM8_EWALL Wall {
+  translation 18.15 0 -10.64
+  rotation 0 1 0 1.5708
+}
 DEF NWALL1 Wall {
   translation 1.65 0 0
 }
