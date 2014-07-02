@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.587789 0.782273 0.206282 0.784328
-  position 12.8548 6.83474 13.3343
+  orientation -0.245015 0.936648 0.250315 1.61107
+  position 9.67152 3.24195 3.92542
 }
 Background {
   skyColor [
@@ -173,6 +173,24 @@ DEF H1S1E Solid {
         size 0.5 0.5 0.01
       }
     }
+    Solid {
+      rotation 1 0 0 1.5708
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              ambientIntensity 1
+              diffuseColor 0.901961 0 0
+              shininess 0.3
+            }
+          }
+          geometry Cylinder {
+            height 0.02
+            radius 0.05
+          }
+        }
+      ]
+    }
   ]
 }
 DEF H2S2W Solid {
@@ -201,11 +219,11 @@ DEF H2S2W Solid {
   ]
 }
 DEF NAO_1 Nao {
-  translation 5.69 0.334011 4.62
-  rotation -0.57735 0.57735 0.57735 2.0944
-  cameraWidth 640
-  cameraHeight 480
-  cameraPixelSize 0.5
+  translation 5.69 0.334009 3.86
+  rotation -1.69525e-09 0.707108 0.707106 3.1416
+  cameraWidth 1280
+  cameraHeight 960
+  cameraPixelSize 0.25
 }
 SphericalSkyDome {
 }

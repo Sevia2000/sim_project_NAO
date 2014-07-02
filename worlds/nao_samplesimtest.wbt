@@ -19,8 +19,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.587789 0.782273 0.206282 0.784328
-  position 12.8548 6.83474 13.3343
+  orientation 0.627621 -0.596662 -0.500086 4.45005
+  position 5.03113 8.29163 2.47573
 }
 Background {
   skyColor [
@@ -37,7 +37,7 @@ PointLight {
   location 0 1.6 0
 }
 DEF ROBOT_DOOR Robot {
-  translation 5.28176 1.03 1.55064
+  translation 4.12176 1.03 1.65064
   children [
     DEF STATIC_BODY Shape {
       appearance Appearance {
@@ -62,6 +62,30 @@ DEF ROBOT_DOOR Robot {
       endPoint Solid {
         translation 0.425 0 0
         children [
+          DEF H2 Solid {
+            translation 0 -0.51 0
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    ambientIntensity 1
+                    diffuseColor 1 1 1
+                    emissiveColor 1 1 1
+                    shininess 0
+                    specularColor 1 1 1
+                  }
+                  texture ImageTexture {
+                    url [
+                      "textures/hall2.png"
+                    ]
+                  }
+                }
+                geometry Box {
+                  size 0.5 0.5 0.08
+                }
+              }
+            ]
+          }
           Shape {
             appearance Appearance {
               texture ImageTexture {
@@ -93,16 +117,28 @@ Floor {
   ]
 }
 Wall {
-  translation 4.54 -1.24 3.05
+  translation 2.55 0 3.42
+}
+Wall {
+  translation 2.55 0 2.18
+}
+Wall {
+  translation 3.92 0 0.5
   rotation 0 1 0 1.5708
 }
 Wall {
-  translation 6.86 -1.24 3.04999
+  translation 5.16 0 0.5
   rotation 0 1 0 1.5708
 }
-DEF H1S2E Solid {
-  translation 4.68752 0.51 2.27622
-  rotation 0 1 0 1.5708
+Wall {
+  translation 6.5 0 3.42
+}
+Wall {
+  translation 6.5 0 2.18
+}
+DEF H1 Solid {
+  translation 3.56751 0.58 2.75623
+  rotation 0 1 0 4.7124
   children [
     Shape {
       appearance Appearance {
@@ -115,7 +151,7 @@ DEF H1S2E Solid {
         }
         texture ImageTexture {
           url [
-            "textures/hallway1segment2east.png"
+            "textures/hall1.png"
           ]
         }
       }
@@ -125,9 +161,9 @@ DEF H1S2E Solid {
     }
   ]
 }
-DEF H1S2W Solid {
-  translation 6.70752 0.51 2.27621
-  rotation 0 1 0 1.5708
+DEF H3 Solid {
+  translation 5.58751 0.58 2.75621
+  rotation 0 1 0 4.7124
   children [
     Shape {
       appearance Appearance {
@@ -140,57 +176,7 @@ DEF H1S2W Solid {
         }
         texture ImageTexture {
           url [
-            "textures/hallway1segment2west.png"
-          ]
-        }
-      }
-      geometry Box {
-        size 0.5 0.5 0.01
-      }
-    }
-  ]
-}
-DEF H1S1E Solid {
-  translation 4.68752 0.51 3.61622
-  rotation 0 1 0 1.5708
-  children [
-    Shape {
-      appearance Appearance {
-        material Material {
-          ambientIntensity 1
-          diffuseColor 1 1 1
-          emissiveColor 1 1 1
-          shininess 0
-          specularColor 1 1 1
-        }
-        texture ImageTexture {
-          url [
-            "textures/hallway1segment1east.png"
-          ]
-        }
-      }
-      geometry Box {
-        size 0.5 0.5 0.01
-      }
-    }
-  ]
-}
-DEF H2S2W Solid {
-  translation 6.70752 0.51 3.61621
-  rotation 0 1 0 1.5708
-  children [
-    Shape {
-      appearance Appearance {
-        material Material {
-          ambientIntensity 1
-          diffuseColor 1 1 1
-          emissiveColor 1 1 1
-          shininess 0
-          specularColor 1 1 1
-        }
-        texture ImageTexture {
-          url [
-            "textures/hallway1segment1west.png"
+            "textures/hall3.png"
           ]
         }
       }
@@ -201,7 +187,7 @@ DEF H2S2W Solid {
   ]
 }
 DEF NAO_1 Nao {
-  translation 5.69 0.334011 4.62
+  translation 4.54 0.344004 2.85
   rotation -0.57735 0.57735 0.57735 2.0944
   cameraWidth 640
   cameraHeight 480
