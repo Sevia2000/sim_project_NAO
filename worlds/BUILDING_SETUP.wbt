@@ -1,0 +1,162 @@
+#VRML_SIM V7.4.3 utf8
+WorldInfo {
+  info [
+    "Description"
+    "Author: first name last name <e-mail>"
+    "Date: DD MMM YYYY"
+  ]
+}
+Viewpoint {
+  orientation 0.956892 -0.26997 -0.107114 5.49394
+  position 14.9403 22.9281 13.2033
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.33 -1 -0.5
+  castShadows TRUE
+}
+Floor {
+  size 100 100
+}
+Nao {
+  translation 3.91 0.333983 -4.57
+}
+DEF ROOM1_SWALL Wall {
+  translation 4.65 0 -3
+}
+DEF ROOM1_NWALL Wall {
+  translation 4.65 0 -6.15
+}
+DEF ROOM1_WWALL Wall {
+  translation 3.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM1_ROOM2_WALL Wall {
+  translation 6.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM2_SWALL Wall {
+  translation 7.65 0 -3
+}
+DEF ROOM2_NWALL Wall {
+  translation 7.65 0 -6.15
+}
+DEF ROOM2_EWALL Wall {
+  translation 9.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF MIDWALL1 Wall {
+  translation 6.15 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM3_SWALL Wall {
+  translation 4.65 0 -9.15
+}
+DEF ROOM3_NWALL Wall {
+  translation 4.65 0 -12.15
+}
+DEF ROOM3_WWALL Wall {
+  translation 3.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM3_ROOM4_WALL Wall {
+  translation 6.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM4_SWALL Wall {
+  translation 7.65 0 -9.15
+}
+DEF ROOM4_NWALL Wall {
+  translation 7.65 0 -12.15
+}
+DEF ROOM4_EWALL Wall {
+  translation 9.15 0 -10.64
+  rotation 0 1 0 1.5708
+}
+DEF NWALL1 Wall {
+  translation 1.65 0 0
+}
+DEF NWALL2 Wall {
+  translation 4.65 0 0
+}
+DEF NWALL3 Wall {
+  translation 7.65 0 0
+}
+DEF NWALL4 Wall {
+  translation 10.65 0 0
+}
+DEF NWALL5 Wall {
+  translation 13.65 0 0
+}
+DEF NWALL6 Wall {
+  translation 16.65 0 0
+}
+DEF NWALL7 Wall {
+  translation 19.65 0 0
+}
+DEF WWALL1 Wall {
+  translation 0 0 -1.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL2 Wall {
+  translation 0 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL3 Wall {
+  translation 0 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL4 Wall {
+  translation 0 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL5 Wall {
+  translation 0 0 -13.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL1 Wall {
+  translation 21.3 0 -1.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL2 Wall {
+  translation 21.3 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL3 Wall {
+  translation 21.3 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL4 Wall {
+  translation 21.3 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL5 Wall {
+  translation 21.3 0 -13.65
+  rotation 0 1 0 1.5708
+}
+DEF NWALL1 Wall {
+  translation 1.65 0 -15.3
+}
+DEF NWALL2 Wall {
+  translation 4.65 0 -15.3
+}
+DEF NWALL3 Wall {
+  translation 7.65 0 -15.3
+}
+DEF NWALL4 Wall {
+  translation 10.65 0 -15.3
+}
+DEF NWALL5 Wall {
+  translation 13.65 0 -15.3
+}
+DEF NWALL6 Wall {
+  translation 16.65 0 -15.3
+}
+DEF NWALL7 Wall {
+  translation 19.65 0 -15.3
+}
