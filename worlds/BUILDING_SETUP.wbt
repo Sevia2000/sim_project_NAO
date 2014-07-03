@@ -7,8 +7,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation 0.956892 -0.26997 -0.107114 5.49394
-  position 14.9403 22.9281 13.2033
+  orientation 0.630418 0.741661 0.229155 5.37324
+  position -3.46117 3.09631 3.5128
 }
 Background {
   skyColor [
@@ -20,11 +20,22 @@ DirectionalLight {
   direction -0.33 -1 -0.5
   castShadows TRUE
 }
+Supervisor {
+  controller "SupervisorController"
+}
 Floor {
   size 100 100
 }
-Nao {
-  translation 3.91 0.333983 -4.57
+DEF NAO_BOT Nao {
+  translation -0.84 0.334 0.0299998
+  rotation 0.577351 -0.577351 -0.577349 4.18879
+  cameraWidth 320
+  cameraHeight 240
+  cameraPixelSize 0.5
+  bodySlot [
+    DEF COMPASS_SOLID Solid {
+    }
+  ]
 }
 DEF ROOM1_SWALL Wall {
   translation 4.65 0 -3
