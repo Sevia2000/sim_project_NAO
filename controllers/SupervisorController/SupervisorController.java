@@ -60,10 +60,16 @@ public class SupervisorController extends Supervisor {
       //System.out.println("My robot is at position " + trans[0] + ", " + trans[1] + ", " 
       //+ trans[2]);
       double[] rotation = robot_node.getOrientation();
-      double angle = Math.atan2(rotation[0], rotation[6]);
+      double angle = Math.atan2(rotation[1], rotation[7]);
       // rounding (double)Math.round(value * 100000) / 100000
     
-      angle = (double)Math.round(angle * 10000) / 10000;
+      
+      //angle = (angle > 0 ? angle : (2*3.14159 + angle)) * 360 / (2*3.14159);
+      
+      //(x > 0 ? x : (2*PI + x)) * 360 / (2*PI)
+      
+      angle = (double)Math.round(angle * 1000) / 1000;
+     
       System.out.println("The robot's rotation: " + angle);
       
       // Enter here functions to send actuator commands, like:
