@@ -1,6 +1,6 @@
 #VRML_OBJ V7.4.3 utf8
 DEF ROBOT_DOOR Robot {
-  translation 4.24 1.03 0
+  translation 0 1.03 0
   children [
     DEF STATIC_BODY Shape {
       appearance Appearance {
