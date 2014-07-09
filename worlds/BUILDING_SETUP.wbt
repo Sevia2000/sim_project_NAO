@@ -37,6 +37,9 @@ DEF NAO_BOT Nao {
     }
   ]
 }
+
+# WALLS
+
 DEF ROOM1_SWALL Wall {
   translation 4.65 0 -3
 }
@@ -223,3 +226,5 @@ DEF NWALL6 Wall {
 DEF NWALL7 Wall {
   translation 19.65 0 -15.3
 }
+
+# OBJECTS
