@@ -1,7 +1,27 @@
 #VRML_OBJ V7.4.3 utf8
 DEF ROBOT_DOOR Robot {
-  translation 0 1.03 0
+  translation -2.49 1.03 0
   children [
+    Solid {
+      translation -0.15 0 0
+      children [
+        Shape {
+          geometry Box {
+            size 0.2 2 0.15
+          }
+        }
+      ]
+    }
+    Solid {
+      translation 1.1 0 0
+      children [
+        Shape {
+          geometry Box {
+            size 0.3 2 0.15
+          }
+        }
+      ]
+    }
     DEF STATIC_BODY Shape {
       appearance Appearance {
         material Material {
@@ -23,7 +43,7 @@ DEF ROBOT_DOOR Robot {
       device PositionSensor {
       }
       endPoint Solid {
-        translation 0.425 0 0
+        translation 0.44 0 0
         children [
           Shape {
             appearance Appearance {
@@ -34,7 +54,7 @@ DEF ROBOT_DOOR Robot {
               }
             }
             geometry DEF DOOR_SHAPE Box {
-              size 0.8 2 0.05
+              size 0.9 2 0.05
             }
           }
         ]
@@ -46,5 +66,4 @@ DEF ROBOT_DOOR Robot {
       }
     }
   ]
-  boundingObject USE STATIC_BODY
 }

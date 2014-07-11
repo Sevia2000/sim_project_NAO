@@ -1,0 +1,743 @@
+#VRML_SIM V7.4.3 utf8
+WorldInfo {
+  info [
+    "Description"
+    "Author: first name last name <e-mail>"
+    "Date: DD MMM YYYY"
+  ]
+}
+Viewpoint {
+  orientation -0.447795 -0.774665 -0.446513 1.92701
+  position -5.48915 15.8703 -5.37335
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.33 -1 -0.5
+  castShadows TRUE
+}
+Supervisor {
+  controller "SupervisorController"
+}
+DEF NAO_BOT Nao {
+  translation 0.825 0.334 -6.825
+}
+Floor {
+  size 100 100
+}
+DEF ROOF RectangleArena {
+  translation 0 -1 0
+}
+DEF ROBOT_DOOR Robot {
+  translation 1.52998 1.03 -4.86001
+  rotation 0 1 0 1.5708
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.15
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.5
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+  boundingObject USE STATIC_BODY
+}
+DEF SWALL1 Solid {
+  translation 0.825 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF SWALL2 Solid {
+  translation 2.325 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF SWALL3 Solid {
+  translation 3.825 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF SWALL4 Solid {
+  translation 5.325 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF SWALL5 Solid {
+  translation 6.825 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF SWALL6 Solid {
+  translation 8.325 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF SWALL7 Solid {
+  translation 9.825 1 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF WWALL1 Solid {
+  translation 0 1 -0.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF WWALL2 Solid {
+  translation 0 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF WWALL3 Solid {
+  translation 0 1 -3.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF WWALL4 Solid {
+  translation 0 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF WWALL5 Solid {
+  translation 0 1 -6.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL1 Solid {
+  translation 0.825 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL2 Solid {
+  translation 2.325 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL3 Solid {
+  translation 3.825 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL4 Solid {
+  translation 5.325 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL5 Solid {
+  translation 6.825 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL6 Solid {
+  translation 8.325 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF NWALL7 Solid {
+  translation 9.825 1 -7.65
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF EWALL1 Solid {
+  translation 10.65 1 -0.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF EWALL2 Solid {
+  translation 10.65 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF EWALL3 Solid {
+  translation 10.65 1 -3.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF EWALL4 Solid {
+  translation 10.65 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF EWALL5 Solid {
+  translation 10.65 1 -6.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_SWALL Solid {
+  translation 2.325 1 -1.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_WWALL Solid {
+  translation 1.575 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_NWALL Solid {
+  translation 2.325 1 -3.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_ROOM2_WALL Solid {
+  translation 3.075 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_EWALL Solid {
+  translation 4.575 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_SWALL Solid {
+  translation 3.825 1 -1.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_NWALL Solid {
+  translation 3.825 1 -3.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF MIDWALL1 Solid {
+  translation 3.075 1 -3.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_SWALL Solid {
+  translation 2.325 1 -4.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_NWALL Solid {
+  translation 2.325 1 -6.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_ROOM4_WALL Solid {
+  translation 3.075 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_EWALL Solid {
+  translation 4.575 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_SWALL Solid {
+  translation 3.825 1 -4.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_NWALL Solid {
+  translation 3.825 1 -6.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_SWALL Solid {
+  translation 6.825 1 -1.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_WWALL Solid {
+  translation 6.075 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_NWALL Solid {
+  translation 6.825 1 -3.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM1_ROOM2_WALL Solid {
+  translation 7.575 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_EWALL Solid {
+  translation 9.075 1 -2.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_SWALL Solid {
+  translation 8.325 1 -1.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_NWALL Solid {
+  translation 8.325 1 -3.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF MIDWALL1 Solid {
+  translation 7.575 1 -3.825
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_SWALL Solid {
+  translation 6.825 1 -4.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_WWALL Solid {
+  translation 6.075 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_NWALL Solid {
+  translation 6.825 1 -6.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM3_ROOM4_WALL Solid {
+  translation 7.575 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_EWALL Solid {
+  translation 9.075 1 -5.325
+  rotation 0 1 0 1.5708
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_SWALL Solid {
+  translation 8.325 1 -4.575
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
+DEF ROOM2_NWALL Solid {
+  translation 8.325 1 -6.075
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1.5 2 0.15
+      }
+    }
+  ]
+}
