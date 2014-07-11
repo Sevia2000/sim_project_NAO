@@ -13,6 +13,11 @@ import com.cyberbotics.webots.controller.Robot;
 import com.cyberbotics.webots.controller.Supervisor;
 import com.cyberbotics.webots.controller.Node;
 import com.cyberbotics.webots.controller.Field;
+
+import java.awt.geom.Point2D;
+
+import java.io.*;
+
 import java.lang.Math;
 
 
@@ -23,6 +28,10 @@ public class SupervisorController extends Supervisor {
   
   // You may need to define your own functions or variables, like
   //  private LED led;
+  private double x = 0;
+  private double y = 0;
+  private double a = 0;
+  
   
   // SupervisorController constructor
   public SupervisorController() {
@@ -38,7 +47,7 @@ public class SupervisorController extends Supervisor {
     
   // User defined function for initializing and running
   // the SupervisorController class
-  public void run() {
+  public void run() throws Exception {
     
     // Main loop:
     // Perform simulation steps of 64 milliseconds
@@ -48,7 +57,9 @@ public class SupervisorController extends Supervisor {
     Field trans_field = robot_node.getField("translation");
     Field rot_field = robot_node.getField("rotation");
     
+   
     
+ 
     while (step(128) != -1) {
       
       // Read the sensors:l
@@ -57,26 +68,45 @@ public class SupervisorController extends Supervisor {
       double[] trans = trans_field.getSFVec3f();
       //double[] rotation = rot_field.getSFRotation();
       // Process sensor data here
-      //System.out.println("My robot is at position " + trans[0] + ", " + trans[1] + ", " 
-      //+ trans[2]);
+      System.out.println("My robot is at position " + trans[0] + ", " + trans[1] + ", " + trans[2]);
+      x = trans[0];
+      y = trans[2];
+       PrintWriter writer = new PrintWriter("naoloc.txt", "UTF-8");
+      writer.println(x);
+      writer.println(y);
+      
       double[] rotation = robot_node.getOrientation();
-      double angle = Math.atan2(rotation[1], rotation[7]);
+      double angle = Math.atan2(rotation[0], rotation[6]);
       // rounding (double)Math.round(value * 100000) / 100000
     
       
-      //angle = (angle > 0 ? angle : (2*3.14159 + angle)) * 360 / (2*3.14159);
+      angle = (angle > 0 ? angle : (2*Math.PI + angle)) * 360 / (2*Math.PI);
       
       //(x > 0 ? x : (2*PI + x)) * 360 / (2*PI)
       
-      angle = (double)Math.round(angle * 1000) / 1000;
-     
-      System.out.println("The robot's rotation: " + angle);
+      //change axis orientation so 0 is at X axis
+      angle = angle - 90;
       
+      if(angle < 0)
+        angle = angle + 360;
+      
+      
+      angle = (double)Math.round(angle * 1000) / 1000;
+      
+      if(angle == 360)
+        angle = 0;
+      
+      a = angle;
+      writer.println(a);
+     
+     System.out.println("The robot's rotation: " + angle);
+       writer.close();
       // Enter here functions to send actuator commands, like:
       //  led.set(1);
     };
     
     // Enter here exit cleanup code
+   
   }
 
   // This is the main program of your controller.
@@ -86,8 +116,9 @@ public class SupervisorController extends Supervisor {
   // a controller program.
   // The arguments of the main function can be specified by the
   // "controllerArgs" field of the Robot node
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     SupervisorController controller = new SupervisorController();
     controller.run();
+
   }
 }

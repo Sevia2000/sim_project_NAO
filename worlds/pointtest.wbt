@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 64
 }
 Viewpoint {
-  orientation 0.741554 0.618015 0.261065 5.24887
-  position -1.91216 33.1259 8.67627
+  orientation 0.984253 0.153742 0.087236 5.24115
+  position -3.91745 9.06471 5.75084
 }
 Background {
   skyColor [
@@ -28,9 +28,8 @@ Floor {
   size 100 100
 }
 DEF NAO_BOT Nao {
-  translation 1.65 0.334002 -13.65
-  rotation 0.577351 -0.577351 -0.577349 4.18879
-  controllerArgs "-nocam 9559"
+  translation -2.48 0.334002 0.0299981
+  rotation -1 -7.19235e-09 -1.04366e-06 1.5708
   cameraWidth 320
   cameraHeight 240
   cameraPixelSize 0.5
@@ -39,8 +38,14 @@ DEF NAO_BOT Nao {
     }
   ]
 }
+FruitBowl {
+  translation -4.5 0 -1.8
+}
+FruitBowl {
+  translation -4.5 0 1.8
+}
 DEF ROOM1_SWALL Wall {
-  translation 4.65 0 -3.15
+  translation 4.65 0 -3
 }
 DEF ROOM1_NWALL Wall {
   translation 4.65 0 -6.15
@@ -54,7 +59,7 @@ DEF ROOM1_ROOM2_WALL Wall {
   rotation 0 1 0 1.5708
 }
 DEF ROOM2_SWALL Wall {
-  translation 7.65 0 -3.15
+  translation 7.65 0 -3
 }
 DEF ROOM2_NWALL Wall {
   translation 7.65 0 -6.15
@@ -92,7 +97,7 @@ DEF ROOM4_EWALL Wall {
   rotation 0 1 0 1.5708
 }
 DEF ROOM5_SWALL Wall {
-  translation 13.65 0 -3.15
+  translation 13.65 0 -3
 }
 DEF ROOM5_NWALL Wall {
   translation 13.65 0 -6.15
@@ -106,7 +111,7 @@ DEF ROOM5_ROOM6_WALL Wall {
   rotation 0 1 0 1.5708
 }
 DEF ROOM6_SWALL Wall {
-  translation 16.65 0 -3.15
+  translation 16.65 0 -3
 }
 DEF ROOM6_NWALL Wall {
   translation 16.65 0 -6.15
@@ -143,25 +148,25 @@ DEF ROOM8_EWALL Wall {
   translation 18.15 0 -10.64
   rotation 0 1 0 1.5708
 }
-DEF SWALL1 Wall {
+DEF NWALL1 Wall {
   translation 1.65 0 0
 }
-DEF SWALL2 Wall {
+DEF NWALL2 Wall {
   translation 4.65 0 0
 }
-DEF SWALL3 Wall {
+DEF NWALL3 Wall {
   translation 7.65 0 0
 }
-DEF SWALL4 Wall {
+DEF NWALL4 Wall {
   translation 10.65 0 0
 }
-DEF SWALL5 Wall {
+DEF NWALL5 Wall {
   translation 13.65 0 0
 }
-DEF SWALL6 Wall {
+DEF NWALL6 Wall {
   translation 16.65 0 0
 }
-DEF SWALL7 Wall {
+DEF NWALL7 Wall {
   translation 19.65 0 0
 }
 DEF WWALL1 Wall {

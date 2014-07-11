@@ -1,0 +1,520 @@
+#VRML_SIM V7.4.3 utf8
+WorldInfo {
+  info [
+    "Description"
+    "Author: first name last name <e-mail>"
+    "Date: DD MMM YYYY"
+  ]
+}
+Viewpoint {
+  orientation -0.892672 -0.383092 -0.237438 1.21237
+  position 0.326318 14.5932 -5.38061
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction -0.33 -1 -0.5
+  castShadows TRUE
+}
+Supervisor {
+  controller "SupervisorController"
+}
+Floor {
+  size 100 100
+}
+DEF NAO_BOT Nao {
+  translation 1.65 0.334002 -10.65
+  rotation 0.577351 0.577351 0.577349 4.18879
+  controllerArgs "-nocam 9559"
+  cameraWidth 320
+  cameraHeight 240
+  cameraPixelSize 0.5
+  bodySlot [
+    DEF COMPASS_SOLID Solid {
+    }
+  ]
+}
+DEF ROOM1_SWALL WallWithSingleDoorFrame {
+  translation 4.65 0 -3.15
+}
+DEF ROOM1_NWALL Wall {
+  translation 4.65 0 -6.15
+}
+DEF ROOM1_WWALL Wall {
+  translation 3.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM1_ROOM2_WALL Wall {
+  translation 6.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM2_SWALL Wall {
+  translation 7.65 0 -3.15
+}
+DEF ROOM2_NWALL Wall {
+  translation 7.65 0 -6.15
+}
+DEF ROOM2_EWALL WallWithSingleDoorFrame {
+  translation 9.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF MIDWALL1 Wall {
+  translation 6.15 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM3_SWALL Wall {
+  translation 4.65 0 -9.15
+}
+DEF ROOM3_NWALL Wall {
+  translation 4.65 0 -12.15
+}
+DEF ROOM3_WWALL WallWithSingleDoorFrame {
+  translation 3.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF DOOR_R3 Robot {
+  translation 3.15 1.03 -11.1
+  rotation 0 1 0 4.71239
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.4
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+}
+DEF DOOR_R4 Robot {
+  translation 9.15 1.03 -11.1
+  rotation 0 1 0 4.71239
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.4
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+}
+DEF DOOR_R2 Robot {
+  translation 9.15 1.03 -5.07
+  rotation 0 1 0 4.71239
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.4
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+}
+DEF DOOR_R5 Robot {
+  translation 12.15 1.03 -5.07
+  rotation 0 1 0 4.71239
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.4
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+}
+DEF DOOR_R6 Robot {
+  translation 18.15 1.03 -5.07
+  rotation 0 1 0 4.71239
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.4
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+}
+DEF DOOR_R7 Robot {
+  translation 12.15 1.03 -11.1
+  rotation 0 1 0 4.71239
+  children [
+    DEF STATIC_BODY Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.317647 0.317647 0.317647
+        }
+      }
+      geometry Box {
+        size 0.05 2.05 0.3
+      }
+    }
+    DEF DOOR HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0 0
+        minStop -2.618
+        maxStop 2.618
+        staticFriction 0.4
+      }
+      device PositionSensor {
+      }
+      endPoint Solid {
+        translation 0.425 0 0
+        children [
+          Shape {
+            appearance Appearance {
+              texture ImageTexture {
+                url [
+                  "textures/single_door_common.png"
+                ]
+              }
+            }
+            geometry DEF DOOR_SHAPE Box {
+              size 0.8 2 0.05
+            }
+          }
+        ]
+        boundingObject USE DOOR_SHAPE
+        physics Physics {
+          density -1
+          mass 10
+        }
+      }
+    }
+  ]
+}
+DEF ROOM3_ROOM4_WALL Wall {
+  translation 6.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM4_SWALL Wall {
+  translation 7.65 0 -9.15
+}
+DEF ROOM4_NWALL Wall {
+  translation 7.65 0 -12.15
+}
+DEF ROOM4_EWALL WallWithSingleDoorFrame {
+  translation 9.15 0 -10.64
+  rotation 0 1 0 1.5708
+}
+DEF ROOM5_SWALL Wall {
+  translation 13.65 0 -3.15
+}
+DEF ROOM5_NWALL Wall {
+  translation 13.65 0 -6.15
+}
+DEF ROOM5_WWALL WallWithSingleDoorFrame {
+  translation 12.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM5_ROOM6_WALL Wall {
+  translation 15.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM6_SWALL Wall {
+  translation 16.65 0 -3.15
+}
+DEF ROOM6_NWALL Wall {
+  translation 16.65 0 -6.15
+}
+DEF ROOM6_EWALL WallWithSingleDoorFrame {
+  translation 18.15 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF MIDWALL1 Wall {
+  translation 15.15 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM7_SWALL Wall {
+  translation 13.65 0 -9.15
+}
+DEF ROOM7_NWALL Wall {
+  translation 13.65 0 -12.15
+}
+DEF ROOM7_WWALL WallWithSingleDoorFrame {
+  translation 12.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM7_ROOM8_WALL Wall {
+  translation 15.15 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF ROOM8_SWALL Wall {
+  translation 16.65 0 -9.15
+}
+DEF ROOM8_NWALL WallWithSingleDoorFrame {
+  translation 16.65 0 -12.15
+}
+DEF ROOM8_EWALL Wall {
+  translation 18.15 0 -10.64
+  rotation 0 1 0 1.5708
+}
+DEF NWALL1 Wall {
+  translation 1.65 0 0
+}
+DEF NWALL2 Wall {
+  translation 4.65 0 0
+}
+DEF NWALL3 Wall {
+  translation 7.65 0 0
+}
+DEF NWALL4 Wall {
+  translation 10.65 0 0
+}
+DEF NWALL5 Wall {
+  translation 13.65 0 0
+}
+DEF NWALL6 Wall {
+  translation 16.65 0 0
+}
+DEF NWALL7 Wall {
+  translation 19.65 0 0
+}
+DEF WWALL1 Wall {
+  translation 0 0 -1.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL2 Wall {
+  translation 0 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL3 Wall {
+  translation 0 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL4 Wall {
+  translation 0 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF WWALL5 Wall {
+  translation 0 0 -13.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL1 Wall {
+  translation 21.3 0 -1.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL2 Wall {
+  translation 21.3 0 -4.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL3 Wall {
+  translation 21.3 0 -7.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL4 Wall {
+  translation 21.3 0 -10.65
+  rotation 0 1 0 1.5708
+}
+DEF EWALL5 Wall {
+  translation 21.3 0 -13.65
+  rotation 0 1 0 1.5708
+}
+DEF NWALL1 Wall {
+  translation 1.65 0 -15.3
+}
+DEF NWALL2 Wall {
+  translation 4.65 0 -15.3
+}
+DEF NWALL3 Wall {
+  translation 7.65 0 -15.3
+}
+DEF NWALL4 Wall {
+  translation 10.65 0 -15.3
+}
+DEF NWALL5 Wall {
+  translation 13.65 0 -15.3
+}
+DEF NWALL6 Wall {
+  translation 16.65 0 -15.3
+}
+DEF NWALL7 Wall {
+  translation 19.65 0 -15.3
+}
