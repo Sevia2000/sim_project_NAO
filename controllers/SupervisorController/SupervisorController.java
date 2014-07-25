@@ -113,7 +113,8 @@ public class SupervisorController extends Supervisor {
 			switch(move.toLowerCase())
 			{
 			    case "push":
-					Node doorNode = this.getFromDef(scan.next());
+                			          String loc = scan.next();
+					Node doorNode = this.getFromDef(loc);
 					Field params = doorNode.getField("position");
 					params.setSFFloat(1.8326);
 				break;
@@ -166,6 +167,8 @@ public class SupervisorController extends Supervisor {
 	Naming.rebind("//localhost/RmiServer", obj);
 	System.out.println("PeerServer bound in registry");
     
+	obj.generate();
+	
 	SupervisorController controller = new SupervisorController();
     controller.run();
   }

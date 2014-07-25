@@ -28,8 +28,6 @@ public class RMIServer extends UnicastRemoteObject implements RMIServerIntf
     
     public RMIServer() throws RemoteException
     {
-        //out of 100
-   
     }
     
     public void generate()
@@ -40,27 +38,61 @@ public class RMIServer extends UnicastRemoteObject implements RMIServerIntf
         {
             roomCasualties[i] = 0;
         }
-        
+        int gen = 0;
         for(int i = 0; i < BOX_COUNT; i++)
         {
-            byte[] bytes = new byte[20];
-            rand.setSeed(bytes);
+            gen = rand.nextInt(100) + 1;
             
-            int gen = rand.nextInt(100) + 1;
-            
-            if(gen <= 5)
+			/*
+			Probabilities:
+			Room 1: 10
+			Room 2: 5
+			Room 3: 20
+			Room 4: 5
+			Room 5: 10
+			Room 6: 15
+			Room 7: 30
+			Room 8: 5
+			*/
+			
+            if(gen <= 10)
             {
                 roomCasualties[0] += 1;
             }
             else if(gen <= 15)
             {
-            
+				roomCasualties[1] += 1;
             }
-            else if(gen <= )
+            else if(gen <= 35)
             {
-            
+				roomCasualties[2] += 1;
             }
+			else if(gen <= 40)
+			{
+				roomCasualties[3] += 1;
+			}
+			else if(gen <= 50)
+			{
+				roomCasualties[4] += 1;
+			}
+			else if(gen <=65)
+			{
+				roomCasualties[5] += 1;
+			}
+			else if(gen <=95)
+			{
+				roomCasualties[6] += 1;
+			}
+			else
+			{	roomCasualties[7] += 1;
+			
+			}
         }
+		
+		for(int i = 0; i < 8; i++)
+		{
+		    casualties.put("r0"+(i+1), new Integer(roomCasualties[i]));
+		}
     }
     
     public double getAngle()
