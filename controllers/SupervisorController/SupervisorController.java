@@ -114,9 +114,25 @@ public class SupervisorController extends Supervisor {
 			{
 			    case "push":
                 			          String loc = scan.next();
-					Node doorNode = this.getFromDef(loc);
-					Field params = doorNode.getField("position");
-					params.setSFFloat(1.8326);
+                			          
+                			          Node hingeNode = this.getFromDef(loc);
+                			          Field hingeParams = hingeNode.getField("position");
+                			          
+                			          if(hingeParams.getSFFloat() < 0)
+                			          {
+                			              hingeParams.setSFFloat(-1.8326);
+                			          }
+                			          else
+                			          {
+                  			              hingeParams.setSFFloat(1.8326);
+                			          }
+                			          
+                			          loc = loc.toUpperCase();
+					Node doorNode = this.getFromDef(loc+"DOOR");
+					Field params = doorNode.getField("translation");
+					double[] values = params.getSFVec3f();
+					values[1] = -100.0;
+					params.setSFVec3f(values);
 				break;
 				
 				default:
