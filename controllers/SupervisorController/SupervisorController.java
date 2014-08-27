@@ -25,6 +25,8 @@ import java.rmi.registry.*;
 
 import java.io.*;
 
+import java.util.ArrayList;
+
 import java.lang.Math;
 
 
@@ -37,6 +39,9 @@ public class SupervisorController extends Supervisor {
 	//  private LED led;
 
 	private static RMIServer obj = null;
+	
+           private static ArrayList<String> doorList = new ArrayList<String>();
+           //public SupervisorController controller = null;
   
 	// SupervisorController constructor
   public SupervisorController() {
@@ -49,6 +54,7 @@ public class SupervisorController extends Supervisor {
     //  led = getLED("ledName");
     
   }
+ 
     
   // User defined function for initializing and running
   // the SupervisorController class
@@ -145,6 +151,31 @@ public class SupervisorController extends Supervisor {
 
 		// Enter here functions to send actuator commands, like:
 		//  led.set(1);
+		
+		
+		
+		// UPDATE HASHMAPS HERE
+		
+		for(String s : doorList)
+		{
+		    Node tempNode = this.getFromDef(s);
+            Field tempField = tempNode.getField("position");
+		    double value = tempField.getSFFloat();
+		    
+		    obj.position.put(s, value);
+		    
+		    tempField = tempNode.getField("minStop");
+		    value = tempField.getSFFloat();
+		    
+		    obj.minStop.put(s, value);
+		    
+		    tempField = tempNode.getField("maxStop");
+		    value = tempField.getSFFloat();
+		    
+		    obj.maxStop.put(s, value);
+		}
+		
+		
     };
     
     // Enter here exit cleanup code
@@ -183,9 +214,36 @@ public class SupervisorController extends Supervisor {
 	Naming.rebind("//localhost/RmiServer", obj);
 	System.out.println("PeerServer bound in registry");
     
-	obj.generate();
+	//obj.generate();
+	
+	doorList.add("s03r14");
+	doorList.add("r11r12");
+	doorList.add("r12r13");
+	doorList.add("r13r14");
+	doorList.add("r11r14");
+	
+	doorList.add("s08r24");
+	doorList.add("r21r22");
+	doorList.add("r22r23");
+	doorList.add("r23r24");
+	doorList.add("r21r24");
+	
+	doorList.add("s01r34");
+	doorList.add("r31r32");
+	doorList.add("r32r33");
+	doorList.add("r33r34");
+	doorList.add("r31r34");
+	
+	doorList.add("s03r41");
+	doorList.add("r41r42");
+	doorList.add("r42r43");
+	doorList.add("r43r44");
+	doorList.add("r41r44");
+	
+	
 	
 	SupervisorController controller = new SupervisorController();
+	//controller = new SupervisorController();
     controller.run();
   }
 }

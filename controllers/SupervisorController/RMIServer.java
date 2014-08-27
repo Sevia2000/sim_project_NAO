@@ -23,11 +23,28 @@ public class RMIServer extends UnicastRemoteObject implements RMIServerIntf
     private static final int BOX_COUNT = 50;
     
     public Map<String, Integer> casualties = new HashMap<String, Integer>();
+    
+    public Map<String, Double> position = new HashMap<String, Double>();
+    public Map<String, Double> minStop = new HashMap<String, Double>();
+    public Map<String, Double> maxStop = new HashMap<String, Double>();
  
     public ArrayList<String> commands = new ArrayList<String>();
     
     public RMIServer() throws RemoteException
     {
+    }
+    
+    public double getDoorPosition(String node) throws RemoteException
+    {
+		return position.get(node);
+    }
+    public double getDoorMaxStop(String node) throws RemoteException
+    {
+		return maxStop.get(node);
+    }
+    public double getDoorMinStop(String node) throws RemoteException
+    {
+		return minStop.get(node);
     }
     
     public void generate()
